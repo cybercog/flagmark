@@ -65,6 +65,9 @@ function isLoggedIn()
         .header.jumbotron {
             margin-top: 1em;
         }
+        .actions {
+            margin-top: 1em;
+        }
     </style>
 </head>
 <body>
@@ -121,13 +124,13 @@ function isLoggedIn()
     <div>
         <img src="<?= $imageUrl ?>">
     </div>
-    <div>
+    <div class="actions">
         <a href="<?= $imageUrl ?>" class="btn btn-primary-outline" onclick="saveFile('<?= $imageUrl ?>'); yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('download'); return true;">Download it!</a>
     </div>
 
     <?php else : ?>
 
-        <p class="lead">Flagmark require use your Facebook avatar to proceed.</p>
+        <p class="lead">Flagmark require your Facebook avatar to proceed.</p>
 
     <?php
     $fb = new Facebook\Facebook([
