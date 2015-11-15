@@ -15,9 +15,9 @@ class ImageUpload
         ));
     }
 
-    public function upload($filename)
+    public function setUploadedPhoto($file)
     {
-        $uploadedImage = \Cloudinary\Uploader::upload($_FILES["avatar"]["tmp_name"],
+        $uploadedImage = \Cloudinary\Uploader::upload($file["avatar"]["tmp_name"],
             [
                 "public_id" => time(), // :TODO: UUID here
                 "crop" => "fit",
@@ -30,13 +30,13 @@ class ImageUpload
         $this->filename = $uploadedImage['public_id'];
     }
 
-    public function getFacebookPhoto($userId)
+    public function setFacebookPhoto($userId)
     {
         $options = [
             'type' => 'facebook',
         ];
 
-        return cloudinary_url_internal($userId, $options);
+        $this->filename = cloudinary_url_internal($userId, $options);
     }
 
     public function getImage()
