@@ -6,11 +6,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $dotenv = new Dotenv\Dotenv(__DIR__, '../.env');
 $dotenv->load();
-
-function isLoggedIn()
-{
-    return !empty($_SESSION['facebook_access_token']);
-}
 ?>
 
 <!DOCTYPE html>
@@ -85,11 +80,12 @@ function isLoggedIn()
             $imageUrl = $iu->getUploadedPhoto($_FILES['avatar']['tmp_name']);
         } else {
             $imageUrl = $iu->getFacebookPhoto($_SESSION['user_id']);
+            $_SESSION['image_url'] = $imageUrl;
         }
         ?>
 
         <p class="lead">
-            Dear <strong><?= $_SESSION['user_name'] ?></strong> we've done this
+            Dear <strong><?= getUserName() ?></strong> we've done this
             unique and special <strong>Flagmark</strong> just for you!
             Feel free to use it.
         </p>
@@ -115,7 +111,8 @@ function isLoggedIn()
 
         $helper = $fb->getRedirectLoginHelper();
         $accessToken = $helper->getAccessToken();
-        $permissions = ['email', 'user_likes']; // optional
+        // $permissions = ['email', 'user_likes']; // optional
+        $permissions = [];
         $loginUrl = $helper->getLoginUrl(getenv('FACEBOOK_LOGIN_CALLBACK_ENDPOINT'), $permissions);
         ?>
         <a href="<?= $loginUrl ?>" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('getit'); return true;"><img src="assets/images/login-facebook.png" alt="Log in with Facebook!"></a>
