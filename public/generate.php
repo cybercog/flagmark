@@ -78,6 +78,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
             <div class="flag pull-left">
                 <a href="?country_code=fr"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/fr.png"><span>France</span></a>
             </div>
+            <div class="flag pull-left">
+                <a href="?country_code=jp"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/jp.png"><span>Japan</span></a>
+            </div>
         </div>
 
         <?php

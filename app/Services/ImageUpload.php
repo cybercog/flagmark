@@ -10,6 +10,7 @@ class ImageUpload
         'ru' => 'hzf8f9whr2ed0mogcobe',
         'lb' => 'lib_v1_cklenn',
         'fr' => 'fr_v1_lrgtag',
+        'jp' => 'jp_v1_erct4l',
     ];
 
     private $countryCode = '';
