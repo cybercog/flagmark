@@ -68,11 +68,30 @@ require_once __DIR__ . '/../vendor/autoload.php';
     </div>
 </div>
 <div class="container">
-    <h1>Выберите язык</h1>
-    <div class="language">
-        <a href="/about-ru.php" class="btn btn-lg btn-primary-outline">Русский</a>
-        <a href="/about-en.php" class="btn btn-lg btn-primary-outline">English</a>
-    </div>
+    <h1>About Flagmark (<a href="/about-ru.php">на русском</a>)</h1>
+    <p class="lead">
+        This microservice was created because a lot of people in social networks asked for help
+        to place Russian flag as overlay (watermark) over their profile photos in graphical editors.
+    </p>
+    <p class="lead">
+        There is a good proverb:
+    </p>
+    <blockquote class="lead">
+        <em>&laquo;If you want a thing well done, do it yourself!&raquo;</em>
+    </blockquote>
+    <p class="lead">
+        P.S.:
+        Despite the fact that we made this service we are not supporting idea of placing flags over your photos.<br>
+        But people are free to choose what they want...<br>
+        We hope you will choose to help people around you with good deeds, not the words.
+    </p>
+    <p class="lead">
+        <strong>Using the service, you agree that you are solely responsible for the use of processed photos.</strong>
+    </p>
+    <p>
+        <a href="about:blank" class="btn btn-primary-outline">&times; Уйти с сайта</a>
+        <a href="/generate.php" class="btn btn-danger-outline">Generate image</a>
+    </p>
 </div>
 <div class="footer">
     <div class="container">

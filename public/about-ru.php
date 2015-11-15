@@ -68,31 +68,38 @@ require_once __DIR__ . '/../vendor/autoload.php';
     </div>
 </div>
 <div class="container">
-    <h1>About Flagmark</h1>
+    <h1>О сервисе Flagmark (<a href="/about-en.php">on english</a>)</h1>
     <p class="lead">
-        This microservice was created because a lot of people in social networks asked for help
-        to place Russian flag as overlay (watermark) over their profile photos in graphical editors.
+        Этот микро-сервис был создан из-за большого количества просьб людей в социальных сетях
+        наложить поверх их фотографий флаг России в графическом редакторе.
     </p>
     <p class="lead">
-        There is a good proverb:
+        Есть хорошая поговорка:
     </p>
     <blockquote class="lead">
-        <em>&laquo;If you want a thing well done, do it yourself!&raquo;</em>
+        <em>&laquo;Хочешь сделать что-то хорошо &mdash; сделай это сам!&raquo;</em>
     </blockquote>
-    <p>
+    <p class="lead">
         P.S.:
-        Despite the fact that we made this service we are not supporting idea of placing flags over your photos.<br>
-        But people are free to choose what they want...<br>
-        We hope you will choose to help people around you with good deeds, not the words.
+        Несмотря на тот факт что мы сделали этот сервис, мы не поддерживаем идею размещения флагов стран на фотографиях в социальных сетях.<br>
+        Но люди вправе выбирать то что они хотят делать...<br>
+        Мы надеемся что вы будете помогать окружающим поступками, а не словами.
+    </p>
+    <p class="lead">
+        <strong>Пользуясь сервисом вы подтверждаете тот факт,
+        что вы сами несёте ответственность за использование обработанной фотографии.</strong>
     </p>
     <p>
-        <a href="/" class="btn btn-primary-outline">&lt; Go back</a>
+        <a href="about:blank" class="btn btn-primary-outline">&times; Уйти с сайта</a>
+        <a href="/generate.php" class="btn btn-danger-outline">Создать изоображение</a>
     </p>
 </div>
 <div class="footer">
     <div class="container">
         <p class="copyright pull-right">
-            <a href="/about.php">About</a>
+            <a href="/about-en.php">About</a>
+            |
+            <a href="/about-ru.php">О сервисе</a>
         </p>
         <p class="copyright">
             Flagmark <?= date('Y') ?>
