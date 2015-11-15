@@ -1,0 +1,33 @@
+body {
+    font-family: Roboto, sans-serif;
+}
+.header.jumbotron {
+}
+.actions {
+    margin-top: 1em;
+}
+
+.footer {
+    margin-top: 1em;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 4em;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 4em;
+    background-color: #f5f5f5;
+}
+
+.copyright {
+    margin-top: 1.2em;
+}
