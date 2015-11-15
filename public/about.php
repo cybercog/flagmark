@@ -80,6 +80,12 @@ require_once __DIR__ . '/../vendor/autoload.php';
         <em>&laquo;If you want a thing well done, do it yourself!&raquo;</em>
     </blockquote>
     <p>
+        P.S.:
+        Despite the fact that we made this service we are not supporting idea of placing flags over your photos.<br>
+        But people are free to choose what they want...<br>
+        We hope you will choose to help people around you with good deeds, not the words.
+    </p>
+    <p>
         <a href="/" class="btn btn-primary-outline">&lt; Go back</a>
     </p>
 </div>
