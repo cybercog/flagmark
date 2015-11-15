@@ -95,7 +95,7 @@ function isLoggedIn()
         </p>
 
         <div>
-            <img src="<?= $imageUrl ?>">
+            <img class="img-responsive" src="<?= $imageUrl ?>">
         </div>
         <div class="actions">
             <a href="<?= $imageUrl ?>" class="btn btn-primary-outline" onclick="saveFile('<?= $imageUrl ?>'); yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('download'); return true;">Download it!</a>
