@@ -15,6 +15,11 @@ function getUserName()
     return $_SESSION['user_name'];
 }
 
+function getUserCountryCode()
+{
+    return $_SESSION['generate_country_code'];
+}
+
 function dd($data)
 {
     dump($data);

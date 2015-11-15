@@ -31,3 +31,17 @@ body {
 .language {
     margin-top: 2em;
 }
+
+.flag span {
+    display: block;
+    text-align: center;
+}
+
+.flag {
+    margin-right: 1em;
+}
+
+.flag img {
+    width: 100px;
+    border: 1px solid #ECEEEF;
+}

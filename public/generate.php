@@ -68,8 +68,20 @@ require_once __DIR__ . '/../vendor/autoload.php';
     <div class="container">
     <?php if (isLoggedIn()) : ?>
 
+        <div class="clearfix">
+            <div class="flag pull-left">
+                <a href="?country_code=rus"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/ru.png"><span>Russia</span></a>
+            </div>
+            <div class="flag pull-left">
+                <a href="?country_code=lib"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/lb.png"><span>Lybia</span></a>
+            </div>
+        </div>
+
         <?php
         $iu = new \Flagmark\Services\ImageUpload();
+        if (isset($_GET['country_code'])) {
+            $iu->setCountryCode($_GET['country_code']);
+        }
 
         if (!empty($_FILES['avatar']['tmp_name'])) {
             $imageUrl = $iu->getUploadedPhoto($_FILES['avatar']['tmp_name']);

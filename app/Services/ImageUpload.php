@@ -6,6 +6,13 @@ class ImageUpload
 {
     private $filename = '';
 
+    private $countryImageIds = [
+        'rus' => 'hzf8f9whr2ed0mogcobe',
+        'lib' => 'lib_v1_cklenn',
+    ];
+
+    private $countryCode = 'rus';
+
     public function __construct()
     {
         \Cloudinary::config(array(
@@ -13,6 +20,19 @@ class ImageUpload
             'api_key' => getenv('CLOUDINARY_API_KEY'),
             'api_secret' => getenv('CLOUDINARY_API_SECRET'),
         ));
+    }
+
+    public function setCountryCode($countryCode)
+    {
+        if (!isset($this->countryImageIds[$countryCode])) {
+            echo "This country image isn't uploaded yet.";
+        }
+        $this->countryCode = $countryCode;
+    }
+
+    public function getCountryImageId()
+    {
+        return $this->countryImageIds[$this->countryCode];
     }
 
     public function getUploadedPhoto($file)
@@ -34,7 +54,7 @@ class ImageUpload
     {
         $options = [
             'type' => 'facebook',
-            'overlay' => 'hzf8f9whr2ed0mogcobe',
+            'overlay' => $this->getCountryImageId(),
             'transformation' => [
                 'crop' => 'fill',
                 'width' => 508,
@@ -49,7 +69,7 @@ class ImageUpload
     {
         $options = [
             'alt' => 'Flagmark image',
-            'overlay' => 'hzf8f9whr2ed0mogcobe',
+            'overlay' => $this->getCountryImageId(),
             'transformation' => [
                 'width' => 508,
                 'height' => 508,
