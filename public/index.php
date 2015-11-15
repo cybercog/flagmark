@@ -67,7 +67,6 @@ function isLoggedIn()
     </style>
 </head>
 <body>
-<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function (d, w, c) {
         (w[c] = w[c] || []).push(function() {
@@ -94,17 +93,6 @@ function isLoggedIn()
     })(document, window, "yandex_metrika_callbacks");
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/<?= getenv('YANDEX_METRIKA_ID') ?>" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', '<?= getenv('GOOGLE_ANALYTICS_ID') ?>', 'auto');
-    ga('send', 'pageview');
-
-</script>
 <div class="container">
     <div class="header">
         <h1>Flagmark</h1>
@@ -153,7 +141,7 @@ function isLoggedIn()
     $permissions = ['email', 'user_likes']; // optional
     $loginUrl = $helper->getLoginUrl(getenv('FACEBOOK_LOGIN_CALLBACK_ENDPOINT'), $permissions);
     ?>
-    <a href="<?= $loginUrl ?>" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('download'); return true;">Log in with Facebook!</a>
+    <a href="<?= $loginUrl ?>" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('getit'); return true;">Log in with Facebook!</a>
     <?php exit(); ?>
 
     <?php endif; ?>
