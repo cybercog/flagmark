@@ -133,7 +133,7 @@ function isLoggedIn()
         <img src="<?= $imageUrl ?>">
     </div>
     <div>
-        <a href="<?= $imageUrl ?>" onclick="saveFile('<?= $imageUrl ?>')">Download it!</a>
+        <a href="<?= $imageUrl ?>" onclick="saveFile('<?= $imageUrl ?>'); yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('download'); return true;">Download it!</a>
     </div>
 
     <?php else : ?>
@@ -148,16 +148,13 @@ function isLoggedIn()
         //'default_access_token' => '{access-token}', // optional
     ]);
 
-
-
     $helper = $fb->getRedirectLoginHelper();
     $accessToken = $helper->getAccessToken();
     $permissions = ['email', 'user_likes']; // optional
     $loginUrl = $helper->getLoginUrl(getenv('FACEBOOK_LOGIN_CALLBACK_ENDPOINT'), $permissions);
-
-    echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
-    exit();
     ?>
+    <a href="<?= $loginUrl ?>" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('download'); return true;">Log in with Facebook!</a>
+    <?php exit(); ?>
 
     <?php endif; ?>
     <div class="footer">
