@@ -91,7 +91,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
         }
         ?>
 
-        <p class="lead">
+        <p class="lead dear">
             Dear <strong><?= getUserName() ?></strong> we've done this
             unique and special <strong>Flagmark</strong> just for you!
         </p>
