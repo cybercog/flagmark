@@ -28,11 +28,37 @@ echo "Hello: {$_SESSION['user_name']}";
 $iu = new \Flagmark\Services\ImageUpload();
 
 if (!empty($_FILES['avatar']['tmp_name'])) {
-    $image = $iu->getUploadedPhoto($_FILES['avatar']['tmp_name']);
+    $imageUrl = $iu->getUploadedPhoto($_FILES['avatar']['tmp_name']);
 } else {
-    $image = $iu->getFacebookPhoto($_SESSION['user_id']);
+    $imageUrl = $iu->getFacebookPhoto($_SESSION['user_id']);
 }
 ?>
 
-<img src="<?= $image ?>">
-<a href="<?= $image ?>" target="_blank">Скачать</a>
+<script>
+    function saveFile(url) {
+        // Get file name from url.
+        var filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        xhr.onload = function() {
+            var a = document.createElement('a');
+            a.href = window.URL.createObjectURL(xhr.response); // xhr.response is a blob
+            a.download = filename; // Set the file name.
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            delete a;
+        };
+        xhr.open('GET', url);
+        xhr.send();
+</script>
+
+<h1>Flagmark</h1>
+<h2>Take your flag</h2>
+<div>
+    <img src="<?= $imageUrl ?>">
+</div>
+<div>
+    <a href="<?= $imageUrl ?>" onclick="saveFile(<?= $imageUrl ?>)">Скачать!</a>
+</div>
+<div>Flagmark <?= date('Y') ?></div>
