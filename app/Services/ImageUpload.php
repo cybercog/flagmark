@@ -11,6 +11,7 @@ class ImageUpload
         'lb' => 'lib_v1_cklenn',
         'fr' => 'fr_v1_lrgtag',
         'jp' => 'jp_v1_erct4l',
+        'iq' => 'iq_v1_smlos1',
     ];
 
     private $countryCode = '';
