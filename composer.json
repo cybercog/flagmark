@@ -2,7 +2,8 @@
     "require": {
         "cloudinary/cloudinary_php": "dev-master",
         "facebook/php-sdk-v4": "^5.1",
-        "vlucas/phpdotenv": "^2.1"
+        "vlucas/phpdotenv": "^2.1",
+        "symfony/var-dumper": "^2.7"
     },
     "autoload": {
         "psr-4": {

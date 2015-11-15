@@ -22,15 +22,16 @@ function isLoggedIn()
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
     <!-- for Google -->
     <meta name="description" content="Take your flag" />
     <meta name="keywords" content="Facebook, Flag, Flagmark" />
 
     <!-- for Facebook -->
     <meta property="og:title" content="Flagmark" />
-    <meta property="og:type" content="" />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content="http://flagmark.cybercog.su/" />
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="Take your flag" />
 
     <!-- for Twitter -->
     <meta name="twitter:card" content="summary" />
@@ -61,7 +62,7 @@ function isLoggedIn()
         body {
             font-family: Roboto, sans-serif;
         }
-        .header {
+        .header.jumbotron {
             margin-top: 1em;
         }
     </style>
@@ -94,8 +95,8 @@ function isLoggedIn()
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/<?= getenv('YANDEX_METRIKA_ID') ?>" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <div class="container">
-    <div class="header">
-        <h1>Flagmark</h1>
+    <div class="header jumbotron">
+        <h1 class="display-3">Flagmark</h1>
         <h2>Take your flag</h2>
     </div>
 
@@ -121,7 +122,7 @@ function isLoggedIn()
         <img src="<?= $imageUrl ?>">
     </div>
     <div>
-        <a href="<?= $imageUrl ?>" onclick="saveFile('<?= $imageUrl ?>'); yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('download'); return true;">Download it!</a>
+        <a href="<?= $imageUrl ?>" class="btn btn-primary-outline" onclick="saveFile('<?= $imageUrl ?>'); yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('download'); return true;">Download it!</a>
     </div>
 
     <?php else : ?>
@@ -141,7 +142,7 @@ function isLoggedIn()
     $permissions = ['email', 'user_likes']; // optional
     $loginUrl = $helper->getLoginUrl(getenv('FACEBOOK_LOGIN_CALLBACK_ENDPOINT'), $permissions);
     ?>
-    <a href="<?= $loginUrl ?>" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('getit'); return true;">Log in with Facebook!</a>
+    <a href="<?= $loginUrl ?>" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('getit'); return true;"><img src="assets/images/login-facebook.png" alt="Log in with Facebook!"></a>
     <?php exit(); ?>
 
     <?php endif; ?>
