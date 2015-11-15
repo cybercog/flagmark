@@ -27,6 +27,10 @@ class ImageUpload
             'image_id' => 'iq_v1_smlos1',
             'name' => 'Iraq',
         ],
+        'sy' => [
+            'image_id' => 'sy_v1_xpisgd',
+            'name' => 'Syria',
+        ],
         'mx' => [
             'image_id' => 'mx_v1_iczewr',
             'name' => 'Mexico',
