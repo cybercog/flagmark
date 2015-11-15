@@ -27,13 +27,12 @@ echo "Hello: {$_SESSION['user_name']}";
 
 $iu = new \Flagmark\Services\ImageUpload();
 
-if (!empty($_FILES["avatar"]["tmp_name"])) {
-    $iu->setUploadedPhoto($_FILES["avatar"]["tmp_name"]);
+if (!empty($_FILES['avatar']['tmp_name'])) {
+    $image =$iu->getUploadedPhoto($_FILES['avatar']['tmp_name']);
 } else {
-    $iu->setFacebookPhoto($_SESSION['user_id']);
-    echo $iu->getPhoto();
-    exit();
+    $image =$iu->getFacebookPhoto($_SESSION['user_id']);
 }
+?>
 
-$image = $iu->getImage();
-echo $image;
+<img src="<?= $image ?>">
+<a href="<?= $image ?>" target="_blank">Скачать</a>

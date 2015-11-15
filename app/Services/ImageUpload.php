@@ -9,57 +9,53 @@ class ImageUpload
     public function __construct()
     {
         \Cloudinary::config(array(
-            "cloud_name" => getenv('CLOUDINARY_CLOUD_NAME'),
-            "api_key" => getenv('CLOUDINARY_API_KEY'),
-            "api_secret" => getenv('CLOUDINARY_API_SECRET'),
+            'cloud_name' => getenv('CLOUDINARY_CLOUD_NAME'),
+            'api_key' => getenv('CLOUDINARY_API_KEY'),
+            'api_secret' => getenv('CLOUDINARY_API_SECRET'),
         ));
     }
 
     public function setUploadedPhoto($file)
     {
-        $uploadedImage = \Cloudinary\Uploader::upload($file["avatar"]["tmp_name"],
+        $uploadedImage = \Cloudinary\Uploader::upload($file['avatar']['tmp_name'],
             [
-                "public_id" => time(), // :TODO: UUID here
-                "crop" => "fit",
-                "width" => "508",
-                "height" => "508",
-                "tags" => ["special", "for_people"]
+                'public_id' => time(), // :TODO: UUID here
+                'crop' => 'fit',
+                'width' => '508',
+                'height' => '508',
+                'tags' => ['special', 'for_people']
             ]
         );
 
-        $this->filename = $uploadedImage['public_id'];
+        $this->convertImage($uploadedImage['public_id']);
     }
 
     public function setFacebookPhoto($userId)
     {
         $options = [
             'type' => 'facebook',
-            "overlay" => 'hzf8f9whr2ed0mogcobe',
+            'overlay' => 'hzf8f9whr2ed0mogcobe',
             'transformation' => [
+                'crop' => 'fit',
                 'width' => 508,
                 'height' => 508,
             ],
         ];
 
-        $this->filename = cloudinary_url($userId, $options);
+        return cloudinary_url($userId, $options);
     }
 
-    public function getPhoto()
-    {
-        return $this->filename;
-    }
-
-    public function getImage()
+    private function convertImage()
     {
         $options = [
-            "alt" => "Flagmark image",
-            "overlay" => 'hzf8f9whr2ed0mogcobe',
+            'alt' => 'Flagmark image',
+            'overlay' => 'hzf8f9whr2ed0mogcobe',
             'transformation' => [
                 'width' => 508,
                 'height' => 508,
             ],
         ];
 
-        return cl_image_tag($this->filename, $options);
+        return cloudinary_url($this->filename, $options);
     }
 }
