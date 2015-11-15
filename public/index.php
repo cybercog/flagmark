@@ -31,6 +31,8 @@ if (!empty($_FILES["avatar"]["tmp_name"])) {
     $iu->setUploadedPhoto($_FILES["avatar"]["tmp_name"]);
 } else {
     $iu->setFacebookPhoto($_SESSION['user_id']);
+    echo $iu->getPhoto();
+    exit();
 }
 
 $image = $iu->getImage();

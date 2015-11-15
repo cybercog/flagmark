@@ -34,9 +34,19 @@ class ImageUpload
     {
         $options = [
             'type' => 'facebook',
+            "overlay" => 'hzf8f9whr2ed0mogcobe',
+            'transformation' => [
+                'width' => 508,
+                'height' => 508,
+            ],
         ];
 
-        $this->filename = cloudinary_url_internal($userId, $options);
+        $this->filename = cloudinary_url($userId, $options);
+    }
+
+    public function getPhoto()
+    {
+        return $this->filename;
     }
 
     public function getImage()
@@ -47,9 +57,9 @@ class ImageUpload
             'transformation' => [
                 'width' => 508,
                 'height' => 508,
-            ]
+            ],
         ];
 
-        return cloudinary_url($this->filename, $options);
+        return cl_image_tag($this->filename, $options);
     }
 }
