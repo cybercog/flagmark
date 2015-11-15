@@ -61,13 +61,17 @@ function isLoggedIn()
         body {
             font-family: Roboto, sans-serif;
         }
+        .header {
+            margin-top: 1em;
+        }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>Flagmark</h1>
-
-    <h2>Take your flag</h2>
+    <div class="header">
+        <h1>Flagmark</h1>
+        <h2>Take your flag</h2>
+    </div>
 
     <?php if (isLoggedIn()) : ?>
 
