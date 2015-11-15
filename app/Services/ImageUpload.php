@@ -7,11 +7,12 @@ class ImageUpload
     private $filename = '';
 
     private $countryImageIds = [
-        'rus' => 'hzf8f9whr2ed0mogcobe',
-        'lib' => 'lib_v1_cklenn',
+        'ru' => 'hzf8f9whr2ed0mogcobe',
+        'li' => 'lib_v1_cklenn',
+        'fr' => 'fr_v1_lrgtag',
     ];
 
-    private $countryCode = 'rus';
+    private $countryCode = '';
 
     public function __construct()
     {
@@ -22,12 +23,13 @@ class ImageUpload
         ));
     }
 
-    public function setCountryCode($countryCode)
+    public function setCountryCode($countryCode = null)
     {
-        if (!isset($this->countryImageIds[$countryCode])) {
-            echo "This country image isn't uploaded yet.";
+        if (!$countryCode || !isset($this->countryImageIds[$countryCode])) {
+            $this->countryCode = 'ru';
+        } else {
+            $this->countryCode = $countryCode;
         }
-        $this->countryCode = $countryCode;
     }
 
     public function getCountryImageId()

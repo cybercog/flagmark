@@ -70,10 +70,13 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
         <div class="clearfix">
             <div class="flag pull-left">
-                <a href="?country_code=rus"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/ru.png"><span>Russia</span></a>
+                <a href="?country_code=ru"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/ru.png"><span>Russia</span></a>
             </div>
             <div class="flag pull-left">
-                <a href="?country_code=lib"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/lb.png"><span>Lybia</span></a>
+                <a href="?country_code=lb"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/lb.png"><span>Lybia</span></a>
+            </div>
+            <div class="flag pull-left">
+                <a href="?country_code=fr"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/fr.png"><span>France</span></a>
             </div>
         </div>
 
@@ -81,6 +84,8 @@ require_once __DIR__ . '/../vendor/autoload.php';
         $iu = new \Flagmark\Services\ImageUpload();
         if (isset($_GET['country_code'])) {
             $iu->setCountryCode($_GET['country_code']);
+        } else {
+            $iu->setCountryCode();
         }
 
         if (!empty($_FILES['avatar']['tmp_name'])) {
