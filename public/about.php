@@ -71,7 +71,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
     <h1>About Flagmark</h1>
     <p class="lead">
         This microservice was created because a lot of people in social networks asked for help
-        to do image overlay (watermark) over their profile photos in graphical editors.
+        to place Russian flag as overlay (watermark) over their profile photos in graphical editors.
     </p>
     <p class="lead">
         There is a good proverb:
