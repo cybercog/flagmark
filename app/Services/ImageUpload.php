@@ -36,7 +36,7 @@ class ImageUpload
             'type' => 'facebook',
             'overlay' => 'hzf8f9whr2ed0mogcobe',
             'transformation' => [
-                'crop' => 'fit',
+                'crop' => 'fill',
                 'width' => 508,
                 'height' => 508,
             ],
