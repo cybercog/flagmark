@@ -110,7 +110,10 @@ function isLoggedIn()
         //'default_access_token' => '{access-token}', // optional
     ]);
 
+
+
     $helper = $fb->getRedirectLoginHelper();
+    $accessToken = $helper->getAccessToken();
     $permissions = ['email', 'user_likes']; // optional
     $loginUrl = $helper->getLoginUrl(getenv('FACEBOOK_LOGIN_CALLBACK_ENDPOINT'), $permissions);
 
