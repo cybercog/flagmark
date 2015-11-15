@@ -32,7 +32,11 @@ class ImageUpload
 
     public function getFacebookPhoto($userId)
     {
-        return facebook_profile_image_tag($userId);
+        $options = [
+            'type' => 'facebook',
+        ];
+
+        return cloudinary_url_internal($userId, $options);
     }
 
     public function getImage()
