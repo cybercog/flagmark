@@ -33,11 +33,6 @@ if (!empty($_FILES["avatar"]["tmp_name"])) {
     $inputImage = $iu->getFacebookPhoto($_SESSION['user_id']);
 }
 
-echo $inputImage;
-
-exit();
-
-
 $iu->upload($inputImage);
 $image = $iu->getImage();
 echo $image;
