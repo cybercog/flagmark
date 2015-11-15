@@ -18,7 +18,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
     <script src="assets/js/scripts.js"></script>
 
     <!-- for Google -->
-    <meta name="description" content="Take your flag" />
+    <meta name="description" content="" />
     <meta name="keywords" content="Facebook, Flag, Flagmark" />
 
     <!-- for Facebook -->
@@ -64,7 +64,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 <div class="header jumbotron">
     <div class="container">
         <h1 class="display-3">Flagmark</h1>
-        <h2>Take your flag</h2>
     </div>
 </div>
 <div class="container">

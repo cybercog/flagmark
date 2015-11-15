@@ -18,7 +18,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
     <script src="assets/js/scripts.js"></script>
 
     <!-- for Google -->
-    <meta name="description" content="Take your flag" />
+    <meta name="description" content="" />
     <meta name="keywords" content="Facebook, Flag, Flagmark" />
 
     <!-- for Facebook -->
@@ -64,7 +64,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 <div class="header jumbotron">
     <div class="container">
         <h1 class="display-3">Flagmark</h1>
-        <h2>Take your flag</h2>
     </div>
 </div>
 <div class="container">
@@ -81,7 +80,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
     </blockquote>
     <p class="lead">
         P.S.:
-        Despite the fact that we made this service we are not supporting idea of placing flags over your photos in social networks.<br>
+        Despite the fact that we made this service <strong>we are not supporting idea of placing flags over your photos in social networks</strong>.<br>
         But people are free to choose what they want...<br>
         We hope you will choose to help people around you with good deeds, not the words.
     </p>

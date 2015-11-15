@@ -17,19 +17,19 @@ require_once __DIR__ . '/../vendor/autoload.php';
     <script src="assets/js/scripts.js"></script>
 
     <!-- for Google -->
-    <meta name="description" content="Take your flag" />
+    <meta name="description" content="" />
     <meta name="keywords" content="Facebook, Flag, Flagmark" />
 
     <!-- for Facebook -->
     <meta property="og:title" content="Flagmark" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://flagmark.cybercog.su/" />
-    <meta property="og:description" content="Take your flag" />
+    <meta property="og:description" content="" />
 
     <!-- for Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Flagmark" />
-    <meta name="twitter:description" content="Take your flag" />
+    <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="" />
 </head>
 <body>
@@ -63,7 +63,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
     <div class="header jumbotron">
         <div class="container">
             <h1 class="display-3">Flagmark</h1>
-            <h2>Take your flag</h2>
         </div>
     </div>
     <div class="container">
