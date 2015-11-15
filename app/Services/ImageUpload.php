@@ -12,6 +12,7 @@ class ImageUpload
         'fr' => 'fr_v1_lrgtag',
         'jp' => 'jp_v1_erct4l',
         'iq' => 'iq_v1_smlos1',
+        'mx' => 'mx_v1_iczewr',
     ];
 
     private $countryCode = '';
@@ -51,7 +52,8 @@ class ImageUpload
             ]
         );
 
-        return $this->convertImage($uploadedImage['public_id']);
+        $this->filename = $uploadedImage['public_id'];
+        return $this->convertImage();
     }
 
     public function getFacebookPhoto($userId)
