@@ -31,6 +31,10 @@ class ImageUpload
             'image_id' => 'sy_v1_xpisgd',
             'name' => 'Syria',
         ],
+        'tr' => [
+            'image_id' => 'tr_v1_btbodh',
+            'name' => 'Turkey',
+        ],
         'mx' => [
             'image_id' => 'mx_v1_iczewr',
             'name' => 'Mexico',
