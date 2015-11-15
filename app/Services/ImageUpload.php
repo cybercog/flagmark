@@ -7,12 +7,30 @@ class ImageUpload
     private $filename = '';
 
     private $countryImageIds = [
-        'ru' => 'hzf8f9whr2ed0mogcobe',
-        'lb' => 'lib_v1_cklenn',
-        'fr' => 'fr_v1_lrgtag',
-        'jp' => 'jp_v1_erct4l',
-        'iq' => 'iq_v1_smlos1',
-        'mx' => 'mx_v1_iczewr',
+        'ru' => [
+            'image_id' => 'hzf8f9whr2ed0mogcobe',
+            'name' => 'Russia',
+        ],
+        'lb' => [
+            'image_id' => 'lib_v1_cklenn',
+            'name' => 'Lebanon',
+        ],
+        'fr' => [
+            'image_id' => 'fr_v1_lrgtag',
+            'name' => 'France',
+        ],
+        'jp' => [
+            'image_id' => 'jp_v1_erct4l',
+            'name' => 'Japan',
+        ],
+        'iq' => [
+            'image_id' => 'iq_v1_smlos1',
+            'name' => 'Iraq',
+        ],
+        'mx' => [
+            'image_id' => 'mx_v1_iczewr',
+            'name' => 'Mexico',
+        ],
     ];
 
     private $countryCode = '';
@@ -35,9 +53,14 @@ class ImageUpload
         }
     }
 
+    public function getCountryImageIds()
+    {
+        return $this->countryImageIds;
+    }
+
     public function getCountryImageId()
     {
-        return $this->countryImageIds[$this->countryCode];
+        return $this->countryImageIds[$this->countryCode]['image_id'];
     }
 
     public function getUploadedPhoto($file)

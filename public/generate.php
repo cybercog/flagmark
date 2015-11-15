@@ -69,24 +69,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
     <?php if (isLoggedIn()) : ?>
 
         <div class="clearfix">
-            <div class="flag pull-left">
-                <a href="?country_code=ru"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/ru.png"><span>Russia</span></a>
-            </div>
-            <div class="flag pull-left">
-                <a href="?country_code=lb"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/lb.png"><span>Lybia</span></a>
-            </div>
-            <div class="flag pull-left">
-                <a href="?country_code=fr"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/fr.png"><span>France</span></a>
-            </div>
-            <div class="flag pull-left">
-                <a href="?country_code=iq"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/iq.png"><span>Iraq</span></a>
-            </div>
-            <div class="flag pull-left">
-                <a href="?country_code=jp"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/jp.png"><span>Japan</span></a>
-            </div>
-            <div class="flag pull-left">
-                <a href="?country_code=mx"><img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/mx.png"><span>Mexico</span></a>
-            </div>
+            <?= renderCountryFlags() ?>
         </div>
 
         <?php
