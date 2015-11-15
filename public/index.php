@@ -31,33 +31,54 @@ if (!empty($_FILES['avatar']['tmp_name'])) {
 }
 ?>
 
-<script>
-    function saveFile(url) {
-        // Get file name from url.
-        var filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
-        var xhr = new XMLHttpRequest();
-        xhr.responseType = 'blob';
-        xhr.onload = function () {
-            var a = document.createElement('a');
-            a.href = window.URL.createObjectURL(xhr.response); // xhr.response is a blob
-            a.download = filename; // Set the file name.
-            a.style.display = 'none';
-            document.body.appendChild(a);
-            a.click();
-            delete a;
-        };
-        xhr.open('GET', url);
-        xhr.send();
-    }
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flagmark</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <script>
+        function saveFile(url) {
+            // Get file name from url.
+            var filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
+            var xhr = new XMLHttpRequest();
+            xhr.responseType = 'blob';
+            xhr.onload = function () {
+                var a = document.createElement('a');
+                a.href = window.URL.createObjectURL(xhr.response); // xhr.response is a blob
+                a.download = filename; // Set the file name.
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                delete a;
+            };
+            xhr.open('GET', url);
+            xhr.send();
+        }
+    </script>
 
-<h1>Flagmark</h1>
-<h2>Take your flag</h2>
-<p>Dear <?= $_SESSION['user_name'] ?> we've done special Flagmark just for you! Feel free to use it.</p>
-<div>
-    <img src="<?= $imageUrl ?>">
+</head>
+<body>
+<div class="container">
+    <h1>Flagmark</h1>
+
+    <h2>Take your flag</h2>
+
+    <p>
+        Dear <strong><?= $_SESSION['user_name'] ?></strong> we've done this
+        unique and special <strong>Flagmark</strong> just for you!
+        Feel free to use it.
+    </p>
+
+    <div>
+        <img src="<?= $imageUrl ?>">
+    </div>
+    <div>
+        <a href="<?= $imageUrl ?>" onclick="saveFile('<?= $imageUrl ?>')">Download it!</a>
+    </div>
+    <div>Flagmark <?= date('Y') ?></div>
 </div>
-<div>
-    <a href="<?= $imageUrl ?>" onclick="saveFile('<?= $imageUrl ?>')">Download it!</a>
-</div>
-<div>Flagmark <?= date('Y') ?></div>
+</body>
+</html>
