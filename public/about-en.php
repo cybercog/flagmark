@@ -81,7 +81,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
     </blockquote>
     <p class="lead">
         P.S.:
-        Despite the fact that we made this service we are not supporting idea of placing flags over your photos.<br>
+        Despite the fact that we made this service we are not supporting idea of placing flags over your photos in social networks.<br>
         But people are free to choose what they want...<br>
         We hope you will choose to help people around you with good deeds, not the words.
     </p>
@@ -89,7 +89,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
         <strong>Using the service, you agree that you are solely responsible for the use of processed photos.</strong>
     </p>
     <p>
-        <a href="about:blank" class="btn btn-primary-outline">&times; Уйти с сайта</a>
+        <a href="about:blank" class="btn btn-primary-outline">&times; Close website</a>
         <a href="/generate.php" class="btn btn-danger-outline">Generate image</a>
     </p>
 </div>
