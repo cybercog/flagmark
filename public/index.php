@@ -21,6 +21,7 @@ function isLoggedIn()
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <!-- for Google -->
     <meta name="description" content="Take your flag" />
     <meta name="keywords" content="Facebook, Flag, Flagmark" />
@@ -56,7 +57,11 @@ function isLoggedIn()
             xhr.send();
         }
     </script>
-
+    <style>
+        html {
+            font-family: Roboto, sans-serif;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
