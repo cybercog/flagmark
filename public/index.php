@@ -58,6 +58,6 @@ if (!empty($_FILES['avatar']['tmp_name'])) {
     <img src="<?= $imageUrl ?>">
 </div>
 <div>
-    <a href="<?= $imageUrl ?>" onclick="saveFile(<?= $imageUrl ?>)">Download it!</a>
+    <a href="<?= $imageUrl ?>" onclick="saveFile('<?= $imageUrl ?>')">Download it!</a>
 </div>
 <div>Flagmark <?= date('Y') ?></div>
