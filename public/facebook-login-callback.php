@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $dotenv = new Dotenv\Dotenv(__DIR__, '../.env');
@@ -29,6 +31,6 @@ if (isset($accessToken)) {
     // Logged in!
     $_SESSION['facebook_access_token'] = (string) $accessToken;
 
-    // Now you can redirect to another page and use the
-    // access token from $_SESSION['facebook_access_token']
+    header('Location: /');
+    exit();
 }
