@@ -23,37 +23,21 @@ if (empty($_SESSION['facebook_access_token'])) {
     exit();
 }
 
-try {
-    // Get the Facebook\GraphNodes\GraphUser object for the current user.
-    // If you provided a 'default_access_token', the '{access-token}' is optional.
-    $response = $fb->get('/me', $_SESSION['facebook_access_token']);
-} catch (Facebook\Exceptions\FacebookResponseException $e) {
-    // When Graph returns an error
-    echo 'Graph returned an error: ' . $e->getMessage();
-    exit;
-} catch (Facebook\Exceptions\FacebookSDKException $e) {
-    // When validation fails or other local issues
-    echo 'Facebook SDK returned an error: ' . $e->getMessage();
-    exit;
-}
+echo "Hello: {$_SESSION['user_name']}";
 
-$me = $response->getGraphUser();
-echo 'Logged in as ' . $me->getName();
-
-exit();
+$iu = new \ImageUpload();
 
 if (!empty($_FILES["avatar"]["tmp_name"])) {
     $inputImage = $_FILES["avatar"]["tmp_name"];
 } else {
-    // :TODO: Here get image from facebook
-    $inputImage = facebook_profile_image_tag("billclinton");
-    var_dump($inputImage);
-    die;
+    $inputImage = $iu->getFacebookPhoto($_SESSION['user_id']);
 }
+
+echo $inputImage;
 
 exit();
 
-$iu = new \ImageUpload();
+
 $iu->upload($inputImage);
 $image = $iu->getImage();
 echo $image;

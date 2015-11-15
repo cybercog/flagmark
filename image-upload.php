@@ -7,9 +7,9 @@ class ImageUpload
     public function __construct()
     {
         \Cloudinary::config(array(
-            "cloud_name" => getenv('COUDINARY_CLOUD_NAME'),
-            "api_key" => getenv('COUDINARY_API_KEY'),
-            "api_secret" => getenv('COUDINARY_API_SECRET'),
+            "cloud_name" => getenv('CLOUDINARY_CLOUD_NAME'),
+            "api_key" => getenv('CLOUDINARY_API_KEY'),
+            "api_secret" => getenv('CLOUDINARY_API_SECRET'),
         ));
     }
 
@@ -19,13 +19,18 @@ class ImageUpload
             [
                 "public_id" => time(), // :TODO: UUID here
                 "crop" => "fit",
-                "width" => "2000",
-                "height" => "2000",
+                "width" => "508",
+                "height" => "508",
                 "tags" => ["special", "for_people"]
             ]
         );
 
         $this->filename = $uploadedImage['public_id'];
+    }
+
+    public function getFacebookPhoto($userId)
+    {
+        return facebook_profile_image_tag($userId);
     }
 
     public function getImage()
