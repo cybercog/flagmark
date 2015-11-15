@@ -8,7 +8,7 @@ class ImageUpload
 
     private $countryImageIds = [
         'ru' => 'hzf8f9whr2ed0mogcobe',
-        'li' => 'lib_v1_cklenn',
+        'lb' => 'lib_v1_cklenn',
         'fr' => 'fr_v1_lrgtag',
     ];
 
