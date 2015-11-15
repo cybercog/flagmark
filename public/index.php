@@ -22,9 +22,6 @@ if (empty($_SESSION['facebook_access_token'])) {
     echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
     exit();
 }
-
-echo "Hello: {$_SESSION['user_name']}";
-
 $iu = new \Flagmark\Services\ImageUpload();
 
 if (!empty($_FILES['avatar']['tmp_name'])) {
@@ -40,7 +37,7 @@ if (!empty($_FILES['avatar']['tmp_name'])) {
         var filename = url.substring(url.lastIndexOf("/") + 1).split("?")[0];
         var xhr = new XMLHttpRequest();
         xhr.responseType = 'blob';
-        xhr.onload = function() {
+        xhr.onload = function () {
             var a = document.createElement('a');
             a.href = window.URL.createObjectURL(xhr.response); // xhr.response is a blob
             a.download = filename; // Set the file name.
@@ -51,14 +48,16 @@ if (!empty($_FILES['avatar']['tmp_name'])) {
         };
         xhr.open('GET', url);
         xhr.send();
+    }
 </script>
 
 <h1>Flagmark</h1>
 <h2>Take your flag</h2>
+<p>Dear <?= $_SESSION['user_name'] ?> we've done special Flagmark just for you! Feel free to use it.</p>
 <div>
     <img src="<?= $imageUrl ?>">
 </div>
 <div>
-    <a href="<?= $imageUrl ?>" onclick="saveFile(<?= $imageUrl ?>)">Скачать!</a>
+    <a href="<?= $imageUrl ?>" onclick="saveFile(<?= $imageUrl ?>)">Download it!</a>
 </div>
 <div>Flagmark <?= date('Y') ?></div>
