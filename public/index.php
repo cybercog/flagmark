@@ -66,7 +66,7 @@ if (!empty($_FILES['avatar']['tmp_name'])) {
 
     <h2>Take your flag</h2>
 
-    <p>
+    <p class="lead">
         Dear <strong><?= $_SESSION['user_name'] ?></strong> we've done this
         unique and special <strong>Flagmark</strong> just for you!
         Feel free to use it.
@@ -78,7 +78,11 @@ if (!empty($_FILES['avatar']['tmp_name'])) {
     <div>
         <a href="<?= $imageUrl ?>" onclick="saveFile('<?= $imageUrl ?>')">Download it!</a>
     </div>
-    <div>Flagmark <?= date('Y') ?></div>
+    <div class="footer">
+        <p>
+            Flagmark <?= date('Y') ?>
+        </p>
+    </div>
 </div>
 </body>
 </html>
