@@ -8,6 +8,13 @@ use Facebook\FacebookRequest;
 use Facebook\GraphObject;
 use Facebook\FacebookRequestException;
 
+$response = (new FacebookRequest(
+    getUserId(), 'POST', '/me/photos', [
+        'source' => new CURLFile('path/to/file.name', 'image/png'),
+        'message' => 'User provided message'
+    ]
+))->execute()->getGraphObject();
+
 if(isLoggedIn()) {
     try {
         // Upload to a user's profile. The photo will be in the

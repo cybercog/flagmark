@@ -14,3 +14,9 @@ function getUserName()
 {
     return $_SESSION['user_name'];
 }
+
+function dd($data)
+{
+    dump($data);
+    die();
+}
