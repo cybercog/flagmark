@@ -28,9 +28,9 @@ echo "Hello: {$_SESSION['user_name']}";
 $iu = new \Flagmark\Services\ImageUpload();
 
 if (!empty($_FILES['avatar']['tmp_name'])) {
-    $image =$iu->getUploadedPhoto($_FILES['avatar']['tmp_name']);
+    $image = $iu->getUploadedPhoto($_FILES['avatar']['tmp_name']);
 } else {
-    $image =$iu->getFacebookPhoto($_SESSION['user_id']);
+    $image = $iu->getFacebookPhoto($_SESSION['user_id']);
 }
 ?>
 

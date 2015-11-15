@@ -15,7 +15,7 @@ class ImageUpload
         ));
     }
 
-    public function setUploadedPhoto($file)
+    public function getUploadedPhoto($file)
     {
         $uploadedImage = \Cloudinary\Uploader::upload($file['avatar']['tmp_name'],
             [
@@ -27,10 +27,10 @@ class ImageUpload
             ]
         );
 
-        $this->convertImage($uploadedImage['public_id']);
+        return $this->convertImage($uploadedImage['public_id']);
     }
 
-    public function setFacebookPhoto($userId)
+    public function getFacebookPhoto($userId)
     {
         $options = [
             'type' => 'facebook',
