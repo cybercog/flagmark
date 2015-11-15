@@ -91,6 +91,8 @@ function isLoggedIn()
 
     <?php else : ?>
 
+        <p class="lead">Flagmark require use your Facebook avatar to proceed.</p>
+
     <?php
     $fb = new Facebook\Facebook([
         'app_id' => getenv('FACEBOOK_APP_ID'),
