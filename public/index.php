@@ -39,6 +39,22 @@ if (!empty($_FILES['avatar']['tmp_name'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <!-- for Google -->
+    <meta name="description" content="Take your flag" />
+    <meta name="keywords" content="Facebook, Flag, Flagmark" />
+
+    <!-- for Facebook -->
+    <meta property="og:title" content="Flagmark" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="http://flagmark.cybercog.su/" />
+    <meta property="og:description" content="" />
+
+    <!-- for Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Flagmark" />
+    <meta name="twitter:description" content="Take your flag" />
+    <meta name="twitter:image" content="" />
+
     <script>
         function saveFile(url) {
             // Get file name from url.
