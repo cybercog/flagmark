@@ -25,7 +25,7 @@ if (empty($_SESSION['facebook_access_token'])) {
 
 echo "Hello: {$_SESSION['user_name']}";
 
-$iu = new \ImageUpload();
+$iu = new \Flagmark\Services\ImageUpload();
 
 if (!empty($_FILES["avatar"]["tmp_name"])) {
     $inputImage = $_FILES["avatar"]["tmp_name"];

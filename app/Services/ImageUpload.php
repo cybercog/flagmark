@@ -1,5 +1,7 @@
 <?php
 
+namespace Flagmark\Services;
+
 class ImageUpload
 {
     private $filename = '';
