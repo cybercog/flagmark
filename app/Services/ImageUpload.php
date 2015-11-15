@@ -41,13 +41,15 @@ class ImageUpload
 
     public function getImage()
     {
-        return cl_image_tag($this->filename, [
-            "alt" => ":(",
+        $options = [
+            "alt" => "Flagmark image",
             "overlay" => 'hzf8f9whr2ed0mogcobe',
             'transformation' => [
                 'width' => 508,
                 'height' => 508,
             ]
-        ]);
+        ];
+
+        return cloudinary_url($this->filename, $options);
     }
 }
