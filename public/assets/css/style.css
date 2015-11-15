@@ -32,18 +32,24 @@ body {
     margin-top: 2em;
 }
 
-.flag span {
-    display: block;
-    text-align: center;
-}
-
-.flag {
+.flag-wrap {
     margin-right: 1em;
 }
 
-.flag img {
-    width: 100px;
+.flag-wrap .country-flag {
+    vertical-align: middle;
+}
+
+.flag-wrap .country-flag img {
+    width: 84px;
+    height: 57px;
     border: 1px solid #ECEEEF;
+    vertical-align: middle;
+}
+
+.flag-wrap .country-name {
+    display: block;
+    text-align: center;
 }
 
 .dear {
