@@ -7,27 +7,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $dotenv = new Dotenv\Dotenv(__DIR__, '../.env');
 $dotenv->load();
 
-$fb = new Facebook\Facebook([
-    'app_id' => getenv('FACEBOOK_APP_ID'),
-    'app_secret' => getenv('FACEBOOK_APP_SECRET'),
-    'default_graph_version' => 'v2.5',
-    //'default_access_token' => '{access-token}', // optional
-]);
-
-if (empty($_SESSION['facebook_access_token'])) {
-    $helper = $fb->getRedirectLoginHelper();
-    $permissions = ['email', 'user_likes']; // optional
-    $loginUrl = $helper->getLoginUrl(getenv('FACEBOOK_LOGIN_CALLBACK_ENDPOINT'), $permissions);
-
-    echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
-    exit();
-}
-$iu = new \Flagmark\Services\ImageUpload();
-
-if (!empty($_FILES['avatar']['tmp_name'])) {
-    $imageUrl = $iu->getUploadedPhoto($_FILES['avatar']['tmp_name']);
-} else {
-    $imageUrl = $iu->getFacebookPhoto($_SESSION['user_id']);
+function isLoggedIn()
+{
+    return !empty($_SESSION['facebook_access_token']);
 }
 ?>
 
@@ -82,6 +64,18 @@ if (!empty($_FILES['avatar']['tmp_name'])) {
 
     <h2>Take your flag</h2>
 
+    <?php if (isLoggedIn()) : ?>
+
+        <?php
+        $iu = new \Flagmark\Services\ImageUpload();
+
+        if (!empty($_FILES['avatar']['tmp_name'])) {
+            $imageUrl = $iu->getUploadedPhoto($_FILES['avatar']['tmp_name']);
+        } else {
+            $imageUrl = $iu->getFacebookPhoto($_SESSION['user_id']);
+        }
+        ?>
+
     <p class="lead">
         Dear <strong><?= $_SESSION['user_name'] ?></strong> we've done this
         unique and special <strong>Flagmark</strong> just for you!
@@ -94,6 +88,26 @@ if (!empty($_FILES['avatar']['tmp_name'])) {
     <div>
         <a href="<?= $imageUrl ?>" onclick="saveFile('<?= $imageUrl ?>')">Download it!</a>
     </div>
+
+    <?php else : ?>
+
+    <?php
+    $fb = new Facebook\Facebook([
+        'app_id' => getenv('FACEBOOK_APP_ID'),
+        'app_secret' => getenv('FACEBOOK_APP_SECRET'),
+        'default_graph_version' => 'v2.5',
+        //'default_access_token' => '{access-token}', // optional
+    ]);
+
+    $helper = $fb->getRedirectLoginHelper();
+    $permissions = ['email', 'user_likes']; // optional
+    $loginUrl = $helper->getLoginUrl(getenv('FACEBOOK_LOGIN_CALLBACK_ENDPOINT'), $permissions);
+
+    echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
+    exit();
+    ?>
+
+    <?php endif; ?>
     <div class="footer">
         <p>
             Flagmark <?= date('Y') ?>
