@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -14,6 +13,8 @@ $response = (new FacebookRequest(
         'message' => 'User provided message'
     ]
 ))->execute()->getGraphObject();
+
+dd($response);
 
 if(isLoggedIn()) {
     try {

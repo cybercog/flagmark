@@ -117,6 +117,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
     </div>
     <div class="footer">
         <div class="container">
+            <p class="copyright pull-right">
+                <a href="/about.php">About</a>
+            </p>
             <p class="copyright">
                 Flagmark <?= date('Y') ?>
             </p>
