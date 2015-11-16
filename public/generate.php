@@ -14,7 +14,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <script src="assets/js/scripts.js"></script>
 
     <!-- for Google -->
     <meta name="description" content="" />
@@ -33,6 +32,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
     <meta name="twitter:image" content="" />
 </head>
 <body>
+
 <script type="text/javascript">
     (function (d, w, c) {
         (w[c] = w[c] || []).push(function() {
@@ -117,8 +117,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
         // $permissions = ['email', 'user_likes']; // optional
         $permissions = [];
         $loginUrl = $helper->getLoginUrl(getenv('FACEBOOK_LOGIN_CALLBACK_ENDPOINT'), $permissions);
+        $timestamp = time();
         ?>
-        <a href="<?= $loginUrl ?>" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('getit'); return true;"><img src="assets/images/login-facebook.png" alt="Log in with Facebook!"></a>
+        <a href="<?= $loginUrl ?>" download="avatar_watermarked.jpg" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('getit'); return true;"><img src="assets/images/login-facebook.png" alt="Log in with Facebook!"></a>
 
     <?php endif; ?>
     </div>
