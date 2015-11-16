@@ -41,8 +41,8 @@ body {
 }
 
 .flag-wrap .country-flag img {
-    width: 84px;
-    height: 57px;
+    width: 100px;
+    height: 67px;
     border: 1px solid #ECEEEF;
     vertical-align: middle;
 }

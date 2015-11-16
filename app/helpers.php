@@ -27,11 +27,20 @@ function renderCountryFlags()
     $output = '';
     foreach ($countryFlags as $countryCode => $flagData) {
         $output .= "<div class='flag-wrap pull-left'>
-                        <a href='?country_code={$countryCode}'><span class='country-flag'><img src='https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/{$countryCode}.png'></span><span class='country-name'>{$flagData['name']}</span></a>
+                        <a href='?country_code={$countryCode}'><span class='country-flag'><img src='" . getSmallFlag($countryCode) . "'></span><span class='country-name'>{$flagData['name']}</span></a>
                     </div>";
     }
 
     return $output;
+}
+
+function getSmallFlag($countryCode)
+{
+    if ($countryCode == 'un') {
+        return '/assets/images/flags/un-v1-small.png';
+    }
+
+    return "https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/{$countryCode}.png";
 }
 
 function dd($data)

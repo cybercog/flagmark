@@ -7,6 +7,10 @@ class ImageUpload
     private $filename = '';
 
     private $countryImageIds = [
+        'un' => [
+            'image_id' => 'un_v1_dhhuw3',
+            'name' => 'United Nations',
+        ],
         'ru' => [
             'image_id' => 'hzf8f9whr2ed0mogcobe',
             'name' => 'Russia',
