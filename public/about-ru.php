@@ -88,7 +88,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
         что вы сами несёте ответственность за использование обработанной фотографии.</strong>
     </p>
     <p>
-        <a href="about:blank" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('close'); window.close();" class="btn btn-primary-outline">&times; Уйти с сайта</a>
+        <a href="about:blank" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('close'); window.close(); return true;" class="btn btn-primary-outline">&times; Уйти с сайта</a>
         <a href="/generate.php" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('getit'); return true;" class="btn btn-danger-outline">Создать изоображение</a>
     </p>
 </div>
