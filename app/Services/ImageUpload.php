@@ -59,7 +59,7 @@ class ImageUpload
     public function setCountryCode($countryCode = null)
     {
         if (!$countryCode || !isset($this->countryImageIds[$countryCode])) {
-            $this->countryCode = 'ru';
+            $this->countryCode = 'un';
         } else {
             $this->countryCode = $countryCode;
         }
