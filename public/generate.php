@@ -119,7 +119,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
         $loginUrl = $helper->getLoginUrl(getenv('FACEBOOK_LOGIN_CALLBACK_ENDPOINT'), $permissions);
         $timestamp = time();
         ?>
-        <a href="<?= $loginUrl ?>" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('getit'); return true;"><img src="assets/images/login-facebook.png" alt="Log in with Facebook!"></a>
+        <a href="<?= $loginUrl ?>" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('login'); return true;"><img src="assets/images/login-facebook.png" alt="Log in with Facebook!"></a>
 
     <?php endif; ?>
     </div>

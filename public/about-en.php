@@ -87,8 +87,8 @@ require_once __DIR__ . '/../vendor/autoload.php';
         <strong>Using the service, you agree that you are solely responsible for the use of processed photos.</strong>
     </p>
     <p>
-        <a href="about:blank" class="btn btn-primary-outline">&times; Close website</a>
-        <a href="/generate.php" class="btn btn-danger-outline">Generate image</a>
+        <a href="about:blank" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('close'); window.close();" class="btn btn-primary-outline">&times; Close website</a>
+        <a href="/generate.php" onclick="yaCounter<?= getenv('YANDEX_METRIKA_ID') ?>.reachGoal('getit'); return true;" class="btn btn-danger-outline">Generate image</a>
     </p>
 </div>
 <div class="footer">
